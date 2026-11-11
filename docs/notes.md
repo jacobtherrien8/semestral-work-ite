@@ -56,33 +56,39 @@ Invalid inputs are rejected with an error message.
 
 \*\*Length\*\* = 0.81 × height (cm)
 
-* If the the player is playing forward -> round down
-* If the player prefers short stick -> -0.5
+If the the player is playing forward -> round down
+
+If the player prefers short stick -> -0.5
 
 
 
-* If the player is playing defence -> round up
-* If the player prefers long stick -> +2. Else -> +1
+If the player is playing defence -> round up
+
+If the player prefers long stick -> +2. Else -> +1
 
 
 
 \*\*Flex\*\* = weight(kg)\*0.45
 
-* If player prefers stiff stick -> round up
-* If player prefers soft stick -> round down
+If player prefers stiff stick -> round up
+
+If player prefers soft stick -> round down
 
 
 
-\*\*Kick point\*\* = depending on the players way of playing 
+\*\*Kick point\*\* = depending on the players way of playing
 
-* Sniper -> low
-* Slaymaker -> mid
-* Power -> high.
+Sniper -> low
+
+Slaymaker -> mid
+
+Power -> high.
 
 
 
 \*\*Curve\*\* =  depending on the players way of playing
 
-* Sniper -> toe
-* Playmaker -> mid, power → heel.
+Sniper -> toe
+
+Playmaker -> mid, power -> heel.
 
