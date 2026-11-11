@@ -54,8 +54,6 @@ Invalid inputs are rejected with an error message.
 
 
 
-
-
 \*\*Length\*\* = 0.81 × height (cm)
 
 * If the the player is playing forward -> round down
@@ -68,14 +66,10 @@ Invalid inputs are rejected with an error message.
 
 
 
-
-
 \*\*Flex\*\* = weight(kg)\*0.45
 
 * If player prefers stiff stick -> round up
 * If player prefers soft stick -> round down
-
-
 
 
 
@@ -87,36 +81,8 @@ Invalid inputs are rejected with an error message.
 
 
 
-
-
 \*\*Curve\*\* =  depending on the players way of playing
 
 * Sniper -> toe
 * Playmaker -> mid, power → heel.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
