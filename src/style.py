@@ -1,4 +1,8 @@
 """
+Kick point and curve recommendation based on the playing style.
+
+
+
 Return the kick point for a playing style.
 
 Raises a ValueError if the style is unknown.
