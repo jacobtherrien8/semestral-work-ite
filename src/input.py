@@ -1,6 +1,8 @@
-"""
-Ask the user for their information, repeating each question until valid.
+"""Ask the user for their information, repeating each question until valid.
 
+The user can type "e" at any question to exit the program.
+
+Author: Jacob Therrien
 """
 from src.converter import convert_lbs_to_kg
 from src.validation import (
@@ -14,6 +16,30 @@ from src.validation import (
     validate_weight,
 )
 
+EXIT_KEY = "e"
+
+
+class ExitProgram(Exception):
+    """Signal raised when the user types the exit key."""
+
+
+def ask(question):
+    """Show a question and return the answer typed by the user.
+
+    Args:
+        question (str): Text shown to the user.
+
+    Returns:
+        str: The answer, without spaces at the start and end.
+
+    Raises:
+        ExitProgram: If the user types "e" (or "E").
+    """
+    answer = input(question).strip()
+    if answer.lower() == EXIT_KEY:
+        raise ExitProgram
+    return answer
+
 
 def read_number(question):
     """Ask a question until the user types a number.
@@ -25,7 +51,7 @@ def read_number(question):
         float: The number typed.
     """
     while True:
-        answer = input(question)
+        answer = ask(question)
         try:
             return float(answer)
         except ValueError:
@@ -67,7 +93,7 @@ def ask_unit():
         str: "kg" or "lbs".
     """
     while True:
-        answer = input("Weight unit? 1 = kg, 2 = lbs: ").strip()
+        answer = ask("Weight unit? 1 = kg, 2 = lbs: ")
         if answer == "1":
             return "kg"
         if answer == "2":
@@ -103,7 +129,7 @@ def ask_choice(question, allowed, name):
         str: The cleaned, valid answer.
     """
     while True:
-        answer = input(question)
+        answer = ask(question)
         try:
             return validate_choice(answer, allowed, name)
         except ValueError as error:
@@ -115,6 +141,9 @@ def ask_player_info():
 
     Returns:
         dict: The validated answers, with the keys used by recommend_stick().
+
+    Raises:
+        ExitProgram: If the user types "e" at any question.
     """
     return {
         "age": ask_age(),
@@ -129,3 +158,8 @@ def ask_player_info():
         "flex_preference": ask_choice(
             "Flex (soft/normal/stiff): ", FLEX_PREFERENCES, "Flex preference"),
     }
+
+
+
+
+    
